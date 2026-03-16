@@ -36,6 +36,7 @@ cp config.example.yaml config.yaml
 
 ```
 ccxt>=4.0.0
+numpy>=1.24.0
 pandas>=2.0.0
 pyyaml>=6.0
 ```

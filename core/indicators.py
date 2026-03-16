@@ -25,10 +25,16 @@ def calc_rsi(df: pd.DataFrame, period: int = 14) -> pd.Series:
     avg_gain = gain.rolling(window=period, min_periods=period).mean()
     avg_loss = loss.rolling(window=period, min_periods=period).mean()
 
-    # Wilder's exponential smoothing for subsequent values
-    for i in range(period, len(avg_gain)):
-        avg_gain.iloc[i] = (avg_gain.iloc[i-1] * (period - 1) + gain.iloc[i]) / period
-        avg_loss.iloc[i] = (avg_loss.iloc[i-1] * (period - 1) + loss.iloc[i]) / period
+    # Wilder's exponential smoothing using numpy arrays (avoids pandas FutureWarning)
+    gain_arr = gain.to_numpy()
+    loss_arr = loss.to_numpy()
+    ag = avg_gain.to_numpy().copy()
+    al = avg_loss.to_numpy().copy()
+    for i in range(period, len(ag)):
+        ag[i] = (ag[i-1] * (period - 1) + gain_arr[i]) / period
+        al[i] = (al[i-1] * (period - 1) + loss_arr[i]) / period
+    avg_gain = pd.Series(ag, index=avg_gain.index)
+    avg_loss = pd.Series(al, index=avg_loss.index)
 
     rs = avg_gain / avg_loss
     rsi = 100 - (100 / (1 + rs))

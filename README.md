@@ -1,5 +1,7 @@
 # CoinSifter
 
+[English](README.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md)
+
 **You set the rules. It finds the coins.**
 
 CoinSifter is an open-source cryptocurrency screening tool that automatically scans Binance for coins matching your custom technical conditions.
@@ -88,6 +90,7 @@ filters:
 - Python 3.10+
 - Binance account with API key (read-only permission)
 - Internet connection
+- Dependencies: ccxt, numpy, pandas, pyyaml (see `requirements.txt`)
 
 ## CoinSifter Pro
 
