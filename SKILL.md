@@ -16,7 +16,7 @@ CoinSifter is an open-source cryptocurrency screening tool that automatically sc
 
 ## Capabilities
 
-- **6 Technical Indicators**: RSI, EMA, MACD, Bollinger Bands, KD Stochastic, Volume
+- **8 Technical Indicators**: RSI, EMA, EMA Cross, MACD, Bollinger Bands, KD Stochastic, Volume, ATR
 - **Multi-Timeframe**: Screen across 4H, 1H, 15m, 1D simultaneously
 - **Strategy System**: YAML-based screening strategies — combine any indicators
 - **CLI Mode**: Headless scanning for automation and cron jobs
@@ -25,7 +25,7 @@ CoinSifter is an open-source cryptocurrency screening tool that automatically sc
 ## Installation
 
 ```bash
-git clone https://github.com/judyailab/coinsifter.git
+git clone https://github.com/JudyaiLab/coinsifter.git
 cd coinsifter
 pip install -r requirements.txt
 cp config.example.yaml config.yaml
@@ -83,6 +83,7 @@ filters:
 | `kd` | `golden_cross`, `death_cross`, `oversold`, `overbought`, `k_above_d` | `period` (default: 14) |
 | `volume` | `above_average` | `multiplier` (default: 1.5) |
 | `ema_cross` | `golden_cross`, `death_cross`, `ema20_above_50`, `ema20_below_50` | — |
+| `atr` | `above` | `period` (default: 14), `value` |
 
 ### Filter Modes
 
@@ -114,18 +115,18 @@ python coinsifter.py -c config.yaml -s strategies/custom_template.yaml -v --loop
 ==================================================
 🔮 CoinSifter v1.8.0 — You set the rules. It finds the coins.
 ==================================================
-📋 策略: Bullish Trend (long)
-🔍 掃描 Binance USDT 交易對（最低成交量: 50M）...
-📊 找到 50 個候選幣種，開始篩選...
+📋 Strategy: Bullish Trend (long)
+🔍 Scanning Binance USDT pairs (min volume: 50M)...
+📊 Found 50 candidates, screening...
 
-🎯 共 3 個幣種通過篩選:
+🎯 3 coins passed all filters:
 
-  1. BTCUSDT
-     價格: 84250.5 | 24h量: 2500.3M | 漲跌: 2.4%
+  1. BTC/USDT
+     Price: 84250.5 | 24h Vol: 2500.3M | Change: 2.4%
      ✅ RSI=65.3 in [50,70]
      ✅ Price 84250.5 > EMA50 82100.2
      ✅ MACD bullish (MACD > Signal)
-     ✅ Volume 1.8x > average
+     ✅ Volume 1.8x >= 1.5x
 ==================================================
 ```
 
@@ -181,6 +182,6 @@ Want more? **CoinSifter Pro** includes Web UI, scheduled scans, Telegram alerts,
 
 ## Links
 
-- GitHub: [github.com/judyailab/coinsifter](https://github.com/judyailab/coinsifter)
+- GitHub: [github.com/judyailab/coinsifter](https://github.com/JudyaiLab/coinsifter)
 - Blog: [judyailab.com](https://judyailab.com)
 - X: [@JudyaiLab](https://x.com/judyailab)

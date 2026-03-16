@@ -167,6 +167,13 @@ class TestKDConditions:
         })
         assert passed is True
 
+    def test_death_cross(self):
+        data = {'stoch_k': 70.0, 'stoch_d': 72.0, 'kd_golden_cross': False, 'kd_death_cross': True}
+        passed, _ = check_condition(data, {
+            'indicator': 'kd', 'condition': 'death_cross'
+        })
+        assert passed is True
+
     def test_k_above_d(self):
         data = {'stoch_k': 60.0, 'stoch_d': 55.0, 'kd_k_above_d': True}
         passed, _ = check_condition(data, {

@@ -1,6 +1,6 @@
 """
-CoinSifter — 全幣種掃描引擎
-從 Binance API 獲取所有 USDT 交易對，按成交量排序篩選
+CoinSifter — Full market scanner engine
+Fetches all USDT pairs from Binance API, sorted by volume
 """
 import ccxt
 import pandas as pd
@@ -25,8 +25,8 @@ def scan_all_usdt(exchange: ccxt.binance, min_volume: float = 50_000_000,
                   top_n: int = 50, quote: str = "USDT",
                   sort_by: str = "volume") -> pd.DataFrame:
     """
-    掃描所有 USDT 交易對，回傳符合門檻的幣種列表
-    sort_by: "volume" = 成交量排行, "gainers" = 漲幅排行, "losers" = 跌幅排行
+    Scan all USDT pairs and return those above the volume threshold.
+    sort_by: "volume" = by volume, "gainers" = top gainers, "losers" = top losers
     """
     tickers = exchange.fetch_tickers()
 

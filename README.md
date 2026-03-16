@@ -16,7 +16,7 @@ CoinSifter is an open-source cryptocurrency screening tool that automatically sc
 ### 1. Install
 
 ```bash
-git clone https://github.com/judyailab/coinsifter.git
+git clone https://github.com/JudyaiLab/coinsifter.git
 cd coinsifter
 pip install -r requirements.txt
 ```
@@ -78,7 +78,7 @@ filters:
 | EMA | `price_above`, `price_below`, `slope_up`, `slope_down` | `period` (default: 20) |
 | MACD | `bullish`, `bearish`, `above_zero`, `below_zero` | — |
 | Bollinger | `above_lower`, `below_upper`, `inside` | `period` (default: 20), `std` |
-| KD | `golden_cross`, `death_cross`, `oversold`, `overbought` | `period` (default: 14) |
+| KD | `golden_cross`, `death_cross`, `oversold`, `overbought`, `k_above_d` | `period` (default: 14) |
 | Volume | `above_average` | `multiplier` (default: 1.5) |
 | EMA Cross | `golden_cross`, `death_cross`, `ema20_above_50`, `ema20_below_50` | — |
 | ATR | `above` | `period` (default: 14), `value` |
