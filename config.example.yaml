@@ -1,0 +1,46 @@
+# ============================================================
+# CoinSifter 設定檔
+# 複製此檔案為 config.yaml 並填入你的資訊
+# ============================================================
+
+# === Binance API 設定 ===
+# 到 Binance 帳戶 → API 管理 → 建立 API Key
+# 只需要「讀取」權限，不需要交易權限
+binance:
+  api_key: "YOUR_BINANCE_API_KEY"
+  api_secret: "YOUR_BINANCE_API_SECRET"
+
+# === 掃描設定 ===
+scan:
+  quote_currency: "USDT"
+  min_volume_24h: 50000000       # 最低 24h 成交量（USDT）
+  top_n: 50                      # 最多回傳幾個結果
+
+# === 篩選條件 ===
+# 模式: "and"（全部滿足）或 "or"（滿足其一）
+filter_mode: "and"
+
+filters:
+  # --- RSI 範圍 ---
+  - indicator: rsi
+    timeframe: 4h
+    period: 14
+    condition: between
+    value: [50, 70]
+
+  # --- 價格在 EMA50 之上 ---
+  - indicator: ema
+    timeframe: 4h
+    period: 50
+    condition: price_above
+
+  # --- MACD 金叉 ---
+  - indicator: macd
+    timeframe: 1h
+    condition: bullish           # bullish = MACD > Signal
+
+  # --- 成交量放大 ---
+  - indicator: volume
+    timeframe: 1h
+    condition: above_average
+    multiplier: 1.5              # 大於 1.5 倍均量

@@ -1,0 +1,60 @@
+# ============================================================
+# Custom Strategy Template
+# Copy this file and modify conditions to create your own strategy
+# ============================================================
+
+name: "My Strategy"
+description: "Describe your strategy logic here"
+direction: long    # long or short
+
+# "and" = all conditions must pass
+# "or"  = any condition passes
+filter_mode: "and"
+
+filters:
+  # --- Available Indicators ---
+  #
+  # indicator: rsi
+  #   period: 14 (default)
+  #   condition: above / below / between
+  #   value: 70 or [40, 60]
+  #
+  # indicator: ema
+  #   period: 5 / 20 / 50 / 200
+  #   condition: price_above / price_below / slope_up / slope_down
+  #
+  # indicator: ema_cross
+  #   condition: golden_cross / death_cross / ema20_above_50 / ema20_below_50
+  #
+  # indicator: macd
+  #   condition: bullish / bearish / above_zero / below_zero
+  #
+  # indicator: bb (Bollinger Bands)
+  #   period: 20 (default)
+  #   condition: above_lower / below_upper / inside
+  #
+  # indicator: kd (Stochastic KD)
+  #   condition: golden_cross / death_cross / overbought / oversold / k_above_d
+  #
+  # indicator: volume
+  #   condition: above_average
+  #   multiplier: 1.5 (ratio)
+  #
+  # indicator: atr
+  #   period: 14 (default)
+  #   condition: above
+  #   value: 0.5
+  #
+  # --- Available Timeframes ---
+  # timeframe: 15m / 1h / 4h / 1d
+
+  - indicator: rsi
+    timeframe: 4h
+    period: 14
+    condition: between
+    value: [40, 60]
+
+  - indicator: ema
+    timeframe: 4h
+    period: 50
+    condition: price_above
