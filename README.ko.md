@@ -72,7 +72,7 @@ filters:
     multiplier: 1.5
 ```
 
-**지원되는 지표:**
+**지원되는 지표** ([초보자 가이드](docs/indicators-guide.md)):
 
 | 지표 | 조건 | 매개변수 |
 |------|------|----------|
@@ -88,7 +88,7 @@ filters:
 ## 시스템 요구사항
 
 - Python 3.10+
-- Binance 계정 및 API 키 (읽기 전용 권한)
+- Binance 계정 및 API 키 (읽기 전용 권한) — [무료 Binance 계정 만들기](https://accounts.binance.com/register?ref=956950981)
 - 인터넷 연결
 - 의존성: ccxt, numpy, pandas, pyyaml (`requirements.txt` 참고)
 

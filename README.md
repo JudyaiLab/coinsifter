@@ -72,7 +72,7 @@ filters:
     multiplier: 1.5
 ```
 
-**Supported indicators:**
+**Supported indicators** ([beginner guide](docs/indicators-guide.md)):
 
 | Indicator | Conditions | Parameters |
 |-----------|-----------|------------|
@@ -88,7 +88,7 @@ filters:
 ## Requirements
 
 - Python 3.10+
-- Binance account with API key (read-only permission)
+- Binance account with API key (read-only permission) — [Create a free Binance account](https://accounts.binance.com/register?ref=956950981)
 - Internet connection
 - Dependencies: ccxt, numpy, pandas, pyyaml (see `requirements.txt`)
 

@@ -72,7 +72,7 @@ filters:
     multiplier: 1.5
 ```
 
-**支援的指標：**
+**支援的指標**（[新手指標教學](docs/indicators-guide.md)）：
 
 | 指標 | 條件 | 參數 |
 |------|------|------|
@@ -88,7 +88,7 @@ filters:
 ## 系統需求
 
 - Python 3.10+
-- Binance 帳號及 API Key（唯讀權限即可）
+- Binance 帳號及 API Key（唯讀權限即可）— [免費註冊 Binance 帳號](https://accounts.binance.com/register?ref=956950981)
 - 網路連線
 - 相依套件：ccxt、numpy、pandas、pyyaml（詳見 `requirements.txt`）
 

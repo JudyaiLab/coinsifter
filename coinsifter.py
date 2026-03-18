@@ -4,10 +4,17 @@ CoinSifter — You set the rules. It finds the coins.
 CLI entry point
 """
 import argparse
+import io
+import os
 import sys
 import time
 import yaml
 from pathlib import Path
+
+# Fix emoji encoding on Windows CJK systems
+if sys.platform == 'win32' and hasattr(sys.stdout, 'buffer'):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 from core.scanner import create_exchange, scan_all_usdt
 from core.filter_engine import evaluate_filters
@@ -119,6 +126,8 @@ def run_scan(config: dict, strategy: dict = None, verbose: bool = False) -> list
     else:
         print("😔 No coins passed all filter conditions")
     print(f"{'='*50}")
+    print("\n⚠️  This tool is for technical screening only — not investment advice.")
+    print("    Always do your own research and manage risk before trading.\n")
 
     return passed_list
 
@@ -162,7 +171,9 @@ def run_demo() -> None:
             print(f"     ✅ {d['reason']}")
         print()
     print(f"{'='*50}")
-    print("\n💡 To run with real data, set up config.yaml with your Binance API key.")
+    print("\n⚠️  This tool is for technical screening only — not investment advice.")
+    print("    Always do your own research and manage risk before trading.\n")
+    print("💡 To run with real data, set up config.yaml with your Binance API key.")
     print("   cp config.example.yaml config.yaml")
     print("   python coinsifter.py -v\n")
 
