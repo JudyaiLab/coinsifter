@@ -92,15 +92,23 @@ filters:
 - 網路連線
 - 相依套件：ccxt、numpy、pandas、pyyaml（詳見 `requirements.txt`）
 
-## CoinSifter Pro
+## 免費版 vs Pro 版
 
-想要更多功能？**CoinSifter Pro** 包含：
-
-- **網頁介面** — 瀏覽器深色主題儀表板，免開終端機
-- **排程掃描** — 設定一次自動定時掃描
-- **Telegram 通知** — 符合條件時即時推播
-- **預建策略** — 經回測驗證、場外勝率 75%+ 的策略
-- **一鍵啟動器** — Windows 和 Mac 捷徑
+| 功能 | 免費版 | Pro |
+|------|:------:|:---:|
+| 8 種技術指標（RSI、EMA、MACD、BB、KD、ATR…） | ✅ | ✅ |
+| 多時間框架篩選 | ✅ | ✅ |
+| 自訂策略（YAML） | ✅ | ✅ |
+| Demo 模式 | ✅ | ✅ |
+| CLI 命令列介面 | ✅ | ✅ |
+| 網頁介面（瀏覽器儀表板） | — | ✅ |
+| 預建策略（場外勝率 75%+） | — | ✅ |
+| Telegram 即時通知 | — | ✅ |
+| 排程自動掃描 | — | ✅ |
+| Docker 一鍵部署 | — | ✅ |
+| Windows & Mac 一鍵啟動 | — | ✅ |
+| 三語介面（EN / 中文 / 한국어） | — | ✅ |
+| 互動式說明書（HTML） | — | ✅ |
 
 👉 [取得 CoinSifter Pro](https://judyailab.com/shop/)
 

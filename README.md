@@ -92,15 +92,23 @@ filters:
 - Internet connection
 - Dependencies: ccxt, numpy, pandas, pyyaml (see `requirements.txt`)
 
-## CoinSifter Pro
+## Free vs Pro
 
-Want more? **CoinSifter Pro** includes:
-
-- **Web UI** — Browser-based dark theme dashboard, no terminal needed
-- **Scheduled Scans** — Set it and forget it, auto-scan at intervals
-- **Telegram Alerts** — Get notified when coins match your criteria
-- **Pre-built Strategies** — Backtested strategies with 75%+ OOS win rate
-- **One-Click Launchers** — Windows & Mac shortcuts
+| Feature | Free | Pro |
+|---------|:----:|:---:|
+| 8 Technical Indicators (RSI, EMA, MACD, BB, KD, ATR...) | ✅ | ✅ |
+| Multi-Timeframe Screening | ✅ | ✅ |
+| Custom Strategy (YAML) | ✅ | ✅ |
+| Demo Mode | ✅ | ✅ |
+| CLI Interface | ✅ | ✅ |
+| Web UI (Browser Dashboard) | — | ✅ |
+| Pre-built Strategies (75%+ OOS win rate) | — | ✅ |
+| Telegram Notifications | — | ✅ |
+| Scheduled Auto-Scan | — | ✅ |
+| Docker One-Click Deploy | — | ✅ |
+| Windows & Mac Launchers | — | ✅ |
+| Trilingual UI (EN / 中文 / 한국어) | — | ✅ |
+| Interactive Manual (HTML) | — | ✅ |
 
 👉 [Get CoinSifter Pro](https://judyailab.com/shop/)
 
